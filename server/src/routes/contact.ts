@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { asyncHandler } from '../utils/asyncHandler';
 import { HttpError } from '../errors/httpError';
+import { saveContact } from '../services/contacts';
 
 const router = Router();
 
@@ -13,11 +14,9 @@ router.post(
       throw new HttpError('Missing required fields', 400);
     }
 
-    // simulate db insert...
-    res.status(200).json({
-      message: 'Contact form received',
-      data: { firstname, lastname, email, message },
-    });
+    await saveContact({ firstname, lastname, email, message });
+
+    res.status(200).json({ message: 'Contact saved successfully' });
   })
 );
 
