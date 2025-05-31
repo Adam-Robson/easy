@@ -29,6 +29,5 @@ class Config {
   }
 }
 
-console.log('ENV:', process.env.DB_HOST); // should log: 'localhost'
 
 export const config = new Config();
