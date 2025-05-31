@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { config } from './config/config';
-import contactRoutes from './routes/contact';
+import contactRoutes from './routes/contacts.routes';
 import { errorHandler } from './middlewares/errorHandler';
 
 const app = express();

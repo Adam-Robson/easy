@@ -1,7 +1,7 @@
 // src/models/songs.model.ts
 import { RowDataPacket } from 'mysql2/promise';
 import { pool } from '../db/mysql';
-import { Song } from '../types/song';
+import { Song } from '../types/songs';
 
 export async function getSongsByCollectionId(collectionId: number): Promise<Song[]> {
   const [rows] = await pool.execute<RowDataPacket[]>(

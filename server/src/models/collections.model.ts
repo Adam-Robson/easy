@@ -1,8 +1,8 @@
 import { RowDataPacket } from 'mysql2/promise';
 import { pool } from '../db/mysql';
-import { Collection } from '../types/collection';
-import { CollectionWithSongs } from '../types/collection';
-import { Song } from '../types/song';
+import { Collection } from '../types/collections';
+import { CollectionWithSongs } from '../types/collections';
+import { Song } from '../types/songs';
 
 export async function getAllCollections(): Promise<Collection[]> {
   const [rows] = await pool.execute<RowDataPacket[]>(
