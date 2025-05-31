@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { HttpError } from '../errors/httpError';
-import { saveContact } from '../services/contacts.service';
 import { ContactsController } from '../controllers/contacts.controller';
 import { asyncHandler } from '../middlewares/asyncHandler';
 
