@@ -15,7 +15,7 @@ router.post(
     }
 
     await saveContact({ firstname, lastname, email, message });
-
+    res.setHeader('Access-Control-Allow-Origin', 'https://lefog.xyz');
     res.status(200).json({ message: 'Contact saved successfully' });
   })
 );

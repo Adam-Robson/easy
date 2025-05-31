@@ -9,7 +9,11 @@ import { errorHandler } from './middlewares/errorHandler';
 const app = express();
 
 // coors light
-app.use(cors({ origin: 'https://lefog.xyz', credentials: true }));
+app.use(cors({ 
+  origin: 'https://lefog.xyz', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true 
+}));
 
 // headers
 app.use(helmet());
@@ -26,6 +30,10 @@ app.use('/api/contact', contactRoutes);
 
 // global outreach
 app.use(errorHandler);
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
 
 // fire it up
 app.listen(config.port, () => {

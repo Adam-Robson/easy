@@ -4,8 +4,9 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "clear": "rm -rf dist",
-    "build": "npm run clear && tsc",
+    "clear": "rm -rf dist/*",
+    "copy": "cp -r public dist/public && cp package.json dist/package.json",
+    "build": "npm run clear && npm run copy && tsc",
     "dev": "tsx --watch src/server.ts",
     "start": "tsx dist/server.js"
   },
