@@ -4,6 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { config } from './config/config';
 import contactRoutes from './routes/contacts.routes';
+import songsRoutes from './routes/songs.routes';
+import collectionsRoutes from './routes/collections.routes';
 import { errorHandler } from './middlewares/errorHandler';
 
 const app = express();
@@ -26,7 +28,9 @@ const publicPath = path.resolve(process.cwd(), 'public');
 app.use(express.static(publicPath));
 
 // routes
+app.use('/api/songs', songsRoutes)
 app.use('/api/contact', contactRoutes);
+app.use('/api/collections', collectionsRoutes);
 
 // global outreach
 app.use(errorHandler);
