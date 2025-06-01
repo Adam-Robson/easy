@@ -1,0 +1,12 @@
+.collection-hero {
+  color: var(--night);
+}
+
+.x {
+  color: var(--secondary);
+}
+
+.x:hover {
+  color: var(--night);
+  transform: transition 0.8s ease-in-out;
+}

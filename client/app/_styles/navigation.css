@@ -1,0 +1,22 @@
+.phosphor-icon {
+  background-color: transparent;
+  color: var(--accent);
+  width: 2rem;
+  height: 2rem;
+}
+
+.dark svg.phosphor-icon {
+  color: var(--hover);
+}
+
+svg.phosphor-icon {
+  color: var(--accent);
+}
+
+.dark svg.phosphor-icon:hover {
+  color: var(--hover);
+}
+
+svg.phosphor-icon:hover {
+  color: var(--accent);
+}

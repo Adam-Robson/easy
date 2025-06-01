@@ -1,0 +1,36 @@
+{
+  "name": "out",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "clear": "rm -rf dist/*",
+    "copy": "cp -r public dist/public && cp package.json dist/package.json",
+    "build": "npm run clear && npm run copy && tsc",
+    "dev": "tsx --watch src/server.ts",
+    "start": "tsx dist/server.js"
+  },
+  "keywords": [],
+  "author": "Adam Robson <adamrayrobson@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "16.5.0",
+    "express": "5.1.0",
+    "helmet": "8.1.0",
+    "mysql2": "3.14.1",
+    "nodemailer": "7.0.3",
+    "serve-favicon": "2.5.0"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.18",
+    "@types/express": "5.0.2",
+    "@types/helmet": "0.0.48",
+    "@types/node": "22.15.29",
+    "@types/nodemailer": "6.4.17",
+    "@types/serve-favicon": "2.5.7",
+    "tsx": "4.19.4",
+    "typescript": "5.8.3"
+  }
+}

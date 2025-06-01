@@ -1,0 +1,17 @@
+.submit {
+  margin-top: 2rem;
+  padding: 0.4rem 1rem;
+  border: solid 1px var(--background);
+  background-color: var(--primary);
+  color: var(--background);
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 3px 13px -10px rgba(66, 68, 74, 1);
+  -moz-box-shadow: 2px 3px 13px -10px rgba(66, 68, 74, 1);
+  box-shadow: 2px 3px 13px -10px rgba(66, 68, 74, 1);
+  cursor: pointer;
+}
+
+.form-container {
+  background-color: var(--secondary);
+  color: black;
+}
