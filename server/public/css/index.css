@@ -43,9 +43,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem; /* 16px */
   line-height: 1.7;
-  color: var(--black);
-  background-color: var(--white);
-  padding: 1rem;
+  background: url('/images/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
@@ -56,6 +60,14 @@ main {
   color: var(--black);
   background-color: var(--white);
 }
+
+.overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      text-align: center;
+    }
 
 /*===========
 
