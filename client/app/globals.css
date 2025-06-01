@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --night: #172121ff;
+  --jet: #213030ff;
+  --charcoal: #444554ff;
+  --chamoisee: #ad8350ff;
+  --taupe: #7f7b82ff;
+  --quartz: #bfacb5ff;
+  --dogwood: #e5d0ccff;
+  --smoke: #f6f4f3ff;
+  --coral: #f4a4a4ff;
+
+  --text: var(--night);
+  --background: var(--smoke);
+  --primary: var(--charcoal);
+  --secondary: var(--taupe);
+  --accent: var(--quartz);
+  --hover: var(--coral);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html.dark {
+  --text: var(--smoke);
+  --background: var(--night);
+  --primary: var(--dogwood);
+  --secondary: var(--taupe);
+  --accent: var(--dogwood);
+  --hover: var(--coral);
+  background-color: var(--background);
+  color: var(--text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family:
+    "Fira Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  line-height: 1.5;
+  z-index: -2;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100dvw;
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.root {
+  height: 100dvh;
+  width: 100%;
+  overflow-y: hidden;
+  z-index: -1;
+}
+
+a {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: var(--font-mono);
+}
+
+.navlink {
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-family: var(--font-mono);
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.navlink:hover {
+  font-weight: 400;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out font-weight 0.3 ease-in-out;
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-slowly {
+  animation: rotateBackground 180s linear infinite;
 }
