@@ -25,25 +25,25 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        working-directory: server
+        working-directory: /server
         run: npm ci
 
       - name: Install dependencies
-        working-directory: client
+        working-directory: /client
         run: npm ci
 
       - name: Lint source
-        working-directory: server
+        working-directory: /server
         run: npm run lint
 
       - name: Lint source
-        working-directory: client
+        working-directory: /client
         run: npm run lint
 
       - name: Build
-        working-directory: server
+        working-directory: /server
         run: npm run build
 
       - name: Build
-        working-directory: client
+        working-directory: /client
         run: npm run build
