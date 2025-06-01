@@ -1,7 +1,7 @@
 "use client";
 
 import "@/_styles/contact-form.css";
-import { ContactType } from "@/_types/about-page";
+import { ContactType } from "@/_types/contact";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
