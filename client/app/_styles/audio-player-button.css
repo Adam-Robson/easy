@@ -1,0 +1,29 @@
+.radio-icon {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 50;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.radio-icon:hover {
+  cursor: pointer;
+  color: var(--hover);
+  transform: translate(-50%) scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.player-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  overflow: hidden;
+}
