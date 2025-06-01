@@ -3,10 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { config } from './config/config';
-import contactRoutes from './routes/contacts.routes';
-import songsRoutes from './routes/songs.routes';
-import collectionsRoutes from './routes/collections.routes';
+import contactRoutes from './routes/contact.route';
+import songsRoutes from './routes/song.route';
+import collectionsRoutes from './routes/collection.route';
 import { errorHandler } from './middlewares/errorHandler';
+import favicon from 'serve-favicon';
 
 const app = express();
 
@@ -22,6 +23,17 @@ app.use(helmet());
 
 // jason
 app.use(express.json());
+
+
+
+
+// Serve favicon from /public/favicon
+app.use(
+  favicon(path.join(__dirname, '..', 'public', 'favicon', 'favicon.ico'))
+);
+
+// Serve the rest of the static assets
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // static
 const publicPath = path.resolve(process.cwd(), 'public');

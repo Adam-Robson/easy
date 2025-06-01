@@ -1,6 +1,6 @@
-import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import { pool } from '../db/mysql';
-import { NewContact, Contact } from '../types/contacts';
+import { ResultSetHeader, RowDataPacket } from "mysql2";
+import { pool } from "../db/mysql";
+import type { NewContact, Contact } from "../types/contact.type";
 
 export async function createContact(data: NewContact): Promise<Contact> {
   const { firstname, lastname, email, message } = data;
@@ -13,7 +13,7 @@ export async function createContact(data: NewContact): Promise<Contact> {
 
   const id = result.insertId;
 
-  const [rows] = await pool.execute<import('mysql2').RowDataPacket[]>(
+  const [rows] = await pool.execute<RowDataPacket[]>(
     `SELECT * FROM contacts WHERE id = ?`,
     [id]
   );

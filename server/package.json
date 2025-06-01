@@ -20,7 +20,8 @@
     "express": "5.1.0",
     "helmet": "8.1.0",
     "mysql2": "3.14.1",
-    "nodemailer": "7.0.3"
+    "nodemailer": "7.0.3",
+    "serve-favicon": "2.5.0"
   },
   "devDependencies": {
     "@types/cors": "2.8.18",
@@ -28,6 +29,7 @@
     "@types/helmet": "0.0.48",
     "@types/node": "22.15.29",
     "@types/nodemailer": "6.4.17",
+    "@types/serve-favicon": "2.5.7",
     "tsx": "4.19.4",
     "typescript": "5.8.3"
   }

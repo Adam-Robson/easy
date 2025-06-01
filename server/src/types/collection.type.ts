@@ -1,4 +1,5 @@
-import type {Song} from './songs';
+import type { Song } from './song.type';
+
 export interface Collection {
   id: number;
   name: string;

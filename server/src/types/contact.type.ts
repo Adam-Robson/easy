@@ -10,7 +10,7 @@ export interface Contact {
 
 export interface NewContact {
   firstname: string;
-  lastname?: string;
+  lastname: string;
   email: string;
   message: string;
 }

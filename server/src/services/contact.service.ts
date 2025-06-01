@@ -1,10 +1,10 @@
-import { Contact, NewContact } from '../types/contacts';
-import { createContact } from '../models/contacts.model';
+import { createContact } from '../models/contact.model';
 import { EmailService } from './email.service';
+import { config } from '../config/config';
+import type { Contact, NewContact } from '../types/contact.type';
 
-const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL || 'admin@lefog.xyz';
 
-export class ContactsService {
+export class ContactService {
   private emailService = new EmailService();
 
   async create(data: NewContact): Promise<Contact> {
@@ -18,15 +18,15 @@ export class ContactsService {
 
   private async sendUserConfirmation(contact: Contact): Promise<void> {
     const html = `
-      <div style="font-family:sans-serif;padding:20px;">
+      <div style="font-family:sans-serif;padding:1.4rem;">
         <h2 style="color:#333;">Hi ${contact.firstname},</h2>
-        <p>Thanks for reaching out to <strong>lefog.xyz</strong>. We’ve received your message:</p>
+        <p>Thanks for reaching out to le fog! Message received:</p>
         <blockquote style="border-left:4px solid #ccc;padding-left:10px;color:#555;">
           ${contact.message}
         </blockquote>
-        <p>We’ll be in touch soon.</p>
+        <p>talk soon!</p>
         <br/>
-        <p style="color:#888;">– The Lefog Team</p>
+        <p style="color:#888;">– lefog</p>
       </div>
     `;
 
@@ -54,7 +54,7 @@ export class ContactsService {
     `;
 
     await this.emailService.sendMail(
-      ADMIN_EMAIL,
+      config.contactAdminEmail,
       `New contact from ${contact.firstname} ${contact.lastname}: ${contact.message}`,
       html
     );
