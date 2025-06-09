@@ -24,10 +24,10 @@
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
-    "@types/cors": "2.8.18",
-    "@types/express": "5.0.2",
+    "@types/cors": "2.8.19",
+    "@types/express": "5.0.3",
     "@types/helmet": "0.0.48",
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.30",
     "@types/nodemailer": "6.4.17",
     "@types/serve-favicon": "2.5.7",
     "tsx": "4.19.4",
